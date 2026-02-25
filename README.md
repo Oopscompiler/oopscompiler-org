@@ -1,6 +1,6 @@
-# Aurapointer 🚀🧠
+# OopsCompiler 🚀🧠
 
-Aurapointer is an interactive coding and learning platform designed to challenge users through timed problem-solving, performance-based evaluation, and progress-driven learning. It blends practice, assessment, and analytics to help users write better and more efficient code.
+OopsCompiler is an interactive coding and learning platform designed to challenge users through timed problem-solving, performance-based evaluation, and progress-driven learning. It blends practice, assessment, and analytics to help users write better and more efficient code.
 
 > 🚧 **Project Status:** Actively Developing (Core Frontend Completed, Features Rolling Out)
 
@@ -16,8 +16,7 @@ Aurapointer is an interactive coding and learning platform designed to challenge
 ### ⏱️ Timed Coding Environment
 - **User-defined timers** for practice sessions  
 - **Fixed timers** for tests and assessments  
-- Optional solution reveal **only after timer completion**  
-- Stopwatch-style tracking for total time spent per question  
+- Optional solution reveal **only after timer completion** - Stopwatch-style tracking for total time spent per question  
 
 ### 🧪 Assessments & Certification
 - Mandatory **test at the end of each course**
@@ -60,31 +59,14 @@ Aurapointer is an interactive coding and learning platform designed to challenge
 - PHP  
 
 **Database**
-- MySQL  
+- MySQL
+  
+**Compiler**
+- jungle0
 
 ---
 
-## 📂 Project Structure (Simplified)
-aurapointer/
-│
-├── assets/ # Images, icons, fonts
-├── css/ # Global and component-level styles
-├── js/ # Client-side logic (timers, UI events)
-│
-├── auth/ # Login, registration, session handling
-├── courses/ # Course pages and metadata
-├── practice/ # Practice questions and attempts
-├── tests/ # Timed assessments and evaluations
-├── compiler/ # Online code editor & execution logic
-├── reports/ # Performance and complexity reports
-│
-├── db/ # Database connection and queries
-├── php/ # Core backend logic (controllers)
-│
-├── index.php # Entry point
-├── dashboard.php # User dashboard
-├── profile.php # User profile and progress
-├── README.md
+
 
 ---
 
@@ -107,10 +89,33 @@ aurapointer/
 - Real-time leaderboards  
 - Advanced plagiarism detection  
 - Multi-language compiler support  
-- AI-based code improvement suggestions  
-- Deployment using cloud infrastructure  
+- AI-based
+## 📂 Project Structure (Simplified)
 
----
+```text
+oopscompiler/
+│
+├── assets/      # Images, icons, fonts
+├── css/         # Global and component-level styles
+├── js/          # Client-side logic (timers, UI events)
+│
+├── auth/        # Login, registration, session handling
+├── courses/     # Course pages and metadata
+├── practice/    # Practice questions and attempts
+├── tests/       # Timed assessments and evaluations
+├── compiler/    # Online code editor & execution logic
+├── reports/     # Performance and complexity reports
+│
+├── db/          # Database connection and queries
+├── php/         # Core backend logic (controllers)
+│
+├── index.php    # Entry point
+├── dashboard.php # User dashboard
+├── profile.php   # User profile and progress
+└── README.md
+```
+**Code improvement suggestions**  
+- Deployment using cloud infrastructure  
 
 ## 🎓 Learning Outcomes
 
@@ -133,16 +138,16 @@ aurapointer/
 This project was developed as a **team of four**.
 
 **Role Distribution:**
-- **Platform Architecture, UI/UX & Feature Logic:** *Rishika Venugopal*  
+- **Platform Architecture, UI/UX & Feature Logic:** *Rishika Venugopal*
   - Frontend design and responsiveness  
   - User authentication & session handling  
   - Course, practice, and test workflow logic  
   - Timer systems and evaluation flow  
   - Feature integration and overall platform coordination  
-- **Database Design & Integration:** Two team members  
+- **Database Design & Integration:** *Gopika Shanmugam and Pari Gupta* 
   - Schema design, table relationships, and backend DB integration
-- **Online Compiler Integration:** One team member  
-  - Google-based compiler setup and execution handling
+- **Online Compiler Integration:** *Shenbaga Krithika*
+  - Compiler setup and execution handling
 
 
 The project is currently maintained as a **portfolio and learning platform**, with potential plans for open-sourcing and collaboration in future phases.
@@ -151,8 +156,10 @@ The project is currently maintained as a **portfolio and learning platform**, wi
 
 ## 📬 Contact
 
-**Rishika Venugopal**  
-GitHub: https://github.com/rishi-techo-14
+- **Rishika Venugopal** GitHub: https://github.com/rishi-techo-14
+- **Shenbaga Krithika N** GitHub: https://github.com/NShenbagakrithika
+- **Pari Gupta** GitHub: https://github.com/pari-056
+- **Gopika S** GitHub: https://github.com/gopika09S
 
 ---
 
