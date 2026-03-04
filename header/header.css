@@ -5,17 +5,18 @@
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: #fff; /* Default light background */
+    background-color: #fff;
     border-bottom: 1px solid #ccc;
     z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 18px 32px;
-    margin: 0 auto;
 }
 
-/* Logo Styling */
+/* Logo */
 .logo a {
     font-family: "Space Grotesk", sans-serif;
     font-size: 22px;
@@ -24,10 +25,11 @@
     color: #000;
 }
 
-/* Center Navigation */
+/* =====================
+   NAVIGATION LINKS
+===================== */
 .nav {
     display: flex;
-    justify-content: center;
     gap: 34px;
 }
 
@@ -44,7 +46,7 @@
 }
 
 /* =====================
-   HEADER RIGHT (Login/Profile + Theme Toggle)
+   HEADER RIGHT SIDE
 ===================== */
 .header-right {
     display: flex;
@@ -66,6 +68,7 @@
     background-color: transparent;
     color: #000;
     transition: all 0.2s ease;
+    cursor: pointer;
 }
 
 .header-right .login:hover,
@@ -75,7 +78,44 @@
 }
 
 /* =====================
-   THEME TOGGLE & DARK MODE
+   PROFILE DROPDOWN
+===================== */
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 110%;
+    right: 0;
+
+    background: #fff;
+    border: 1px solid #ccc;
+    min-width: 150px;
+
+    display: none;
+    flex-direction: column;
+
+    z-index: 999;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 14px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #000;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* =====================
+   THEME TOGGLE
 ===================== */
 .theme-switch {
     position: relative;
@@ -84,12 +124,19 @@
     height: 22px;
 }
 
-.theme-switch input { opacity: 0; width: 0; height: 0; }
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
 
 .slider {
     position: absolute;
     cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: #ccc;
     transition: 0.4s;
     border-radius: 24px;
@@ -107,16 +154,23 @@
     border-radius: 50%;
 }
 
-input:checked + .slider { background-color: #333; }
-input:checked + .slider:before { transform: translateX(24px); }
+input:checked + .slider {
+    background-color: #333;
+}
 
-/* Apply Dark Theme to Header when body has .dark-theme */
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* =====================
+   DARK THEME
+===================== */
 .dark-theme .nav-container {
     background-color: #111;
     border-bottom: 1px solid #333;
 }
 
-.dark-theme .logo a, 
+.dark-theme .logo a,
 .dark-theme .nav a {
     color: #fff;
 }
@@ -131,4 +185,62 @@ input:checked + .slider:before { transform: translateX(24px); }
 .dark-theme .header-right .profile:hover {
     background-color: #fff;
     color: #000;
+}
+
+.dark-theme .dropdown-menu {
+    background-color: #111;
+    border-color: #333;
+}
+
+.dark-theme .dropdown-menu a {
+    color: #fff;
+}
+
+.dark-theme .dropdown-menu a:hover {
+    background-color: #fff;
+    color: #000;
+}
+.profile-box {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.arrow {
+  font-size: 12px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  min-width: 140px;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.dropdown a {
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  display: block;
+}
+
+.dropdown a:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.dropdown.show {
+  display: block;
 }

@@ -1,19 +1,17 @@
-// Get the toggle element
-const toggle = document.getElementById('theme-toggle');
+document.addEventListener("DOMContentLoaded", function () {
 
-// Load saved theme from localStorage
-if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark-theme');
-  toggle.checked = true;
-}
+  const profileBox = document.getElementById("profileBox");
+  const dropdown = document.getElementById("profileDropdown");
 
-// Listen for toggle changes
-toggle.addEventListener('change', () => {
-  if (toggle.checked) {
-    document.body.classList.add('dark-theme');
-    localStorage.setItem('theme', 'dark'); // save preference
-  } else {
-    document.body.classList.remove('dark-theme');
-    localStorage.setItem('theme', 'light'); // save preference
+  if (profileBox) {
+    profileBox.addEventListener("click", function (e) {
+      e.stopPropagation();
+      dropdown.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function () {
+      dropdown.classList.remove("show");
+    });
   }
+
 });
