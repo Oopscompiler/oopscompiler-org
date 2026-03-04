@@ -1,0 +1,246 @@
+/* =====================
+   HEADER LAYOUT
+===================== */
+.nav-container {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 32px;
+}
+
+/* Logo */
+.logo a {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+}
+
+/* =====================
+   NAVIGATION LINKS
+===================== */
+.nav {
+    display: flex;
+    gap: 34px;
+}
+
+.nav a {
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: #000;
+}
+
+/* =====================
+   HEADER RIGHT SIDE
+===================== */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-right .login,
+.header-right .profile {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #000;
+    background-color: transparent;
+    color: #000;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.header-right .login:hover,
+.header-right .profile:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* =====================
+   PROFILE DROPDOWN
+===================== */
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 110%;
+    right: 0;
+
+    background: #fff;
+    border: 1px solid #ccc;
+    min-width: 150px;
+
+    display: none;
+    flex-direction: column;
+
+    z-index: 999;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 14px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #000;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* =====================
+   THEME TOGGLE
+===================== */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 22px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #333;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* =====================
+   DARK THEME
+===================== */
+.dark-theme .nav-container {
+    background-color: #111;
+    border-bottom: 1px solid #333;
+}
+
+.dark-theme .logo a,
+.dark-theme .nav a {
+    color: #fff;
+}
+
+.dark-theme .header-right .login,
+.dark-theme .header-right .profile {
+    border-color: #fff;
+    color: #fff;
+}
+
+.dark-theme .header-right .login:hover,
+.dark-theme .header-right .profile:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.dark-theme .dropdown-menu {
+    background-color: #111;
+    border-color: #333;
+}
+
+.dark-theme .dropdown-menu a {
+    color: #fff;
+}
+
+.dark-theme .dropdown-menu a:hover {
+    background-color: #fff;
+    color: #000;
+}
+.profile-box {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.arrow {
+  font-size: 12px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  min-width: 140px;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.dropdown a {
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  display: block;
+}
+
+.dropdown a:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.dropdown.show {
+  display: block;
+}

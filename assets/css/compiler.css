@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  background: #0d0d0d;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.solve-container {
+  display: flex;
+  height: 100vh;
+}
+
+.question-panel {
+  width: 40%;
+  padding: 20px;
+  border-right: 1px solid #333;
+  overflow-y: auto;
+}
+
+.compiler-panel {
+  width: 60%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#code-editor {
+  height: 300px;
+  background: #111;
+  color: #00ff00;
+  font-family: monospace;
+  font-size: 14px;
+  padding: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #00ff99;
+  border: none;
+  cursor: pointer;
+}
+
+#execution-output {
+  margin-top: 10px;
+  padding: 10px;
+  background: #000;
+  min-height: 70px;
+  white-space: pre-wrap;
+}
+
+#testcase-table {
+  margin-top: 15px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#testcase-table th,
+#testcase-table td {
+  border: 1px solid #333;
+  padding: 8px;
+  text-align: center;
+}
