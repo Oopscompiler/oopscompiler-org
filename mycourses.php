@@ -73,7 +73,7 @@ while($topic = $topics_res->fetch_assoc()){
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>My Courses | ptrmaster</title>
+<title>My Courses | >_Oops!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -96,7 +96,7 @@ body { font-family:"IBM Plex Sans", sans-serif; background:#fff; color:#000; mar
 <!-- Header -->
 <header>
   <div class="nav-container">
-    <div class="logo"><a href="home2.php">ptrmaster</a></div>
+    <div class="logo"><a href="index.php">>_Oops!</a></div>
     <nav>
       <a href="mycourses.php">My Courses</a>
       <a href="#">Practice</a>

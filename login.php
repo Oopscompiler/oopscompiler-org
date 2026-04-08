@@ -1,12 +1,10 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "coding");
-if ($conn->connect_error)
-  die("Connection failed: " . $conn->connect_error);
+require_once __DIR__ . "/config/database.php";
 
 // If already logged in → redirect
 if (isset($_SESSION['user_id'])) {
-  header("Location: home2.php");
+  header("Location: index.php");
   exit();
 }
 
@@ -26,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   if ($stmt->num_rows > 0 && password_verify($password, $password_hash)) {
     $_SESSION['user_id'] = $id;
     $_SESSION['user_name'] = $name;
-    header("Location: home2.php");
+    header("Location: index.php");
     exit();
   } else {
     $login_error = "Invalid email or password.";

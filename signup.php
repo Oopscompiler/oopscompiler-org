@@ -1,8 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "coding");
-if ($conn->connect_error)
-  die("Connection failed: " . $conn->connect_error);
+require_once __DIR__ . "/config/database.php";
 
 $signup_error = '';
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -24,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($stmt2->execute()) {
       $_SESSION['user_id'] = $stmt2->insert_id;
       $_SESSION['user_name'] = $name;
-      header("Location: home2.php");
+      header("Location: index.php");
       exit();
     } else {
       $signup_error = "Error: " . $stmt2->error;
