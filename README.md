@@ -1,6 +1,6 @@
-# Aurapointer 🚀🧠
+# OopsCompiler 🚀🧠
 
-Aurapointer is an interactive coding and learning platform designed to challenge users through timed problem-solving, performance-based evaluation, and progress-driven learning. It blends practice, assessment, and analytics to help users write better and more efficient code.
+OopsCompiler is an interactive coding and learning platform designed to challenge users through timed problem-solving, performance-based evaluation, and progress-driven learning. It blends practice, assessment, and analytics to help users write better and more efficient code.
 
 > 🚧 **Project Status:** Actively Developing (Core Frontend Completed, Features Rolling Out)
 
@@ -65,7 +65,7 @@ Aurapointer is an interactive coding and learning platform designed to challenge
 ---
 
 ## 📂 Project Structure (Simplified)
-aurapointer/
+OopsCompiler/
 │
 ├── assets/ # Images, icons, fonts
 ├── css/ # Global and component-level styles
