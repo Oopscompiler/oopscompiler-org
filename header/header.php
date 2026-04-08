@@ -9,7 +9,7 @@ $user_id = $_SESSION['user_id'] ?? null;
 
 <header>
   <div class="nav-container">
-    <div class="logo"><a href="home2.php">&gt;_Oops!</a></div>
+    <div class="logo"><a href="index.php">&gt;_Oops!</a></div>
 
     <nav class="nav">
       <a href="mycourses.php">My Courses</a>

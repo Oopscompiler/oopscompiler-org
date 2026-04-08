@@ -78,43 +78,6 @@
 }
 
 /* =====================
-   PROFILE DROPDOWN
-===================== */
-.profile-dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 110%;
-    right: 0;
-
-    background: #fff;
-    border: 1px solid #ccc;
-    min-width: 150px;
-
-    display: none;
-    flex-direction: column;
-
-    z-index: 999;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 10px 14px;
-    font-size: 14px;
-    text-decoration: none;
-    color: #000;
-    transition: background 0.2s ease, color 0.2s ease;
-}
-
-.dropdown-menu a:hover {
-    background: #000;
-    color: #fff;
-}
-
-/* =====================
    THEME TOGGLE
 ===================== */
 .theme-switch {
@@ -186,20 +149,6 @@ input:checked + .slider:before {
     background-color: #fff;
     color: #000;
 }
-
-.dark-theme .dropdown-menu {
-    background-color: #111;
-    border-color: #333;
-}
-
-.dark-theme .dropdown-menu a {
-    color: #fff;
-}
-
-.dark-theme .dropdown-menu a:hover {
-    background-color: #fff;
-    color: #000;
-}
 .profile-box {
   position: relative;
   cursor: pointer;
@@ -243,4 +192,17 @@ input:checked + .slider:before {
 
 .dropdown.show {
   display: block;
+}
+.dark-theme .dropdown {
+  background-color: #111;
+  border-color: #333;
+}
+
+.dark-theme .dropdown a {
+  color: #fff;
+}
+
+.dark-theme .dropdown a:hover {
+  background-color: #fff;
+  color: #000;
 }
