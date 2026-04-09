@@ -161,9 +161,12 @@ button:hover{background:#5b54d6}
   </div>
 
   <div class="top-right">
-    <div>👤 <?= htmlspecialchars($user_name) ?></div>
-    <div id="timer">⏱ 00:00</div>
-  </div>
+      <div>👤 <?= htmlspecialchars($user_name) ?></div>
+      <div id="timer" style="display:none">⏱ 00:00</div>
+      <div id="timerControls">
+        <button id="setTimerBtn">Set Timer</button>
+      </div>
+    </div>
 </div>
 
 <div class="container">
@@ -259,19 +262,109 @@ const customInputEl = document.getElementById('customInput');
 const starterToggleEl = document.getElementById('starterToggle');
 const starterCodeEl = document.getElementById('starterCode');
 
-/* TIMER PERSISTENCE */
-const key = "timer_q_<?= $questionId ?>";
-let seconds = parseInt(sessionStorage.getItem(key)) || 0;
+let remaining = 0, running = false, timerInt;
 
-setInterval(()=>{
-  seconds++;
-  sessionStorage.setItem(key, seconds);
-  timer.textContent =
-    "⏱ " +
-    String(Math.floor(seconds/60)).padStart(2,'0') +
-    ":" +
-    String(seconds%60).padStart(2,'0');
-},1000);
+    const timerEl = document.getElementById("timer");
+    const timerControls = document.getElementById("timerControls");
+    const starterCheckbox = document.getElementById("starterToggle");
+
+    starterCheckbox.addEventListener("mouseenter", () => {
+      if (running) {
+        starterCheckbox.title = "Starter code will be visible only when the timer ends.";
+      }
+    });
+
+    starterCheckbox.addEventListener("mouseleave", () => {
+      starterCheckbox.title = "";
+    });
+    starterCheckbox.addEventListener("click", (e) => {
+      if (running) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    });
+
+
+    function showTimerInputs() {
+      timerControls.innerHTML = `
+    <input id="mm" class="time-input" placeholder="MM">
+    :
+    <input id="ss" class="time-input" placeholder="SS">
+    <button id="startBtn">Start</button>
+  `;
+
+      document.getElementById("mm").addEventListener("keydown", e => {
+        if (e.key === "Enter") document.getElementById("ss").focus();
+      });
+
+      document.getElementById("startBtn").onclick = startTimer;
+    }
+
+    function startTimer() {
+      const mm = document.getElementById("mm");
+      const ss = document.getElementById("ss");
+
+      remaining = (+mm.value || 0) * 60 + (+ss.value || 0);
+      if (remaining <= 0) return;
+
+      mm.style.display = ss.style.display = "none";
+      starterToggle.style.cursor = "not-allowed";
+
+
+      timerEl.style.display = "block";
+      running = true;
+
+      timerControls.innerHTML = `
+    <button id="pauseBtn">Pause</button>
+    <button id="resetBtn">Reset</button>
+  `;
+
+      document.getElementById("pauseBtn").onclick = pauseTimer;
+      document.getElementById("resetBtn").onclick = resetTimer;
+
+      tick();
+      timerInt = setInterval(tick, 1000);
+    }
+
+    function tick() {
+      timerEl.textContent = "⏱ " + String(Math.floor(remaining / 60)).padStart(2, '0') + ":" + String(remaining % 60).padStart(2, '0');
+
+      if (remaining === 60) {
+        const c = document.createElement("div");
+        c.className = "cloud";
+        c.textContent = "⚠️ Only 1 minute left!";
+        document.body.appendChild(c);
+        setTimeout(() => c.remove(), 4000);
+      }
+
+      if (--remaining < 0) resetTimer();
+    }
+
+    function pauseTimer() {
+      const btn = document.getElementById("pauseBtn");
+      if (running) {
+        clearInterval(timerInt);
+        running = false;
+        btn.textContent = "Resume";
+      } else {
+        running = true;
+        btn.textContent = "Pause";
+        timerInt = setInterval(tick, 1000);
+      }
+    }
+
+    function resetTimer() {
+      clearInterval(timerInt);
+      running = false;
+      remaining = 0;
+      timerEl.style.display = "none";
+      starterToggle.style.cursor = "pointer";
+
+      showTimerInputs();
+    }
+
+    setTimerBtn.onclick = showTimerInputs;
+
 
 /* TOGGLES */
 starterToggleEl.onchange = e =>
